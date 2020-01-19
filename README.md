@@ -4,33 +4,6 @@
 * After that you can run BASH script to send HTML Email with informations about open alerts in LibreNMS.
 * For HTML Email I am using little bit edited [Free Responsive Simple HTML Email Template](https://github.com/leemunroe/responsive-html-email-template)
 
-# Installation of this stack
-
-```
-cd /opt
-git clone https://github.com/jozefrebjak/librenms-mail-report.git
-cd librenms-mail-report
-mkdir api-report && mkdir full-mail && log
-````
-
-# You will be need to edit send-mail-report.sh
-
-```
-nano send-mail-report.sh
-```
-
-* Change variable MAIL_ADDRESS to your Email address.
-
-```
-MAIL_ADDRESS="MAIl_ADDRESS"
-```
-
-* When you have installed all what is needed and edited Variables then you can run Bash script to send your first Email
-
-```
-./send-mail-report.sh
-```
-
 ## Dependencies 
 
 # SSMTP
@@ -105,3 +78,32 @@ Run the script:
 ```
 python ./open_alerts.py
 ```
+
+# Installation of this stack
+
+```
+cd /opt
+git clone https://github.com/jozefrebjak/librenms-mail-report.git
+cd librenms-mail-report
+mkdir api-report && mkdir full-mail && log
+````
+
+* You will be need to edit send-mail-report.sh
+
+```
+nano send-mail-report.sh
+```
+
+* Change variable MAIL_ADDRESS to your Email address.
+
+```
+MAIL_ADDRESS="MAIl_ADDRESS"
+```
+
+* When you have installed all what is needed and edited Variables then you can run Bash script to send your first Email
+
+```
+./send-mail-report.sh
+```
+
+* When is everything ok and you received Email succesfuly then you can set up cronjob
