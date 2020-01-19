@@ -2,7 +2,7 @@
 
 * You will be need to have installed and configured SSMTP and RaymiiOrg's python scipt.
 * After that you can run BASH script to send HTML Email with informations about open alerts in LibreNMS.
-* For HTML Email I am using little bit edited [Free Responsive Simple HTML Email Template] (https://github.com/leemunroe/responsive-html-email-template)
+* For HTML Email I am using little bit edited [Free Responsive Simple HTML Email Template](https://github.com/leemunroe/responsive-html-email-template)
 
 # Installation of this stack
 
