@@ -10,10 +10,22 @@
 cd /opt
 git clone https://github.com/jozefrebjak/librenms-mail-report.git
 cd librenms-mail-report
-mkdir api-report && mkdir full-mail
+mkdir api-report && mkdir full-mail && log
 ````
 
-* When you have installed all what is needed you can run Bash script to send Email
+# You will be need to edit send-mail-report.sh
+
+```
+nano send-mail-report.sh
+```
+
+* Change variable MAIL_ADDRESS to your Email address.
+
+```
+MAIL_ADDRESS="MAIl_ADDRESS"
+```
+
+* When you have installed all what is needed and edited Variables then you can run Bash script to send your first Email
 
 ```
 ./send-mail-report.sh
