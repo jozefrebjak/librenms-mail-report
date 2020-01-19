@@ -1,13 +1,25 @@
 ## How to get this work 
 
-* You will be need installed and configured SSMTP and RaymiiOrg's python scipt.
-* After that you can run BASH script to send HTML Mail with informations about open alerts in LibreNMS.
+* You will be need to have installed and configured SSMTP and RaymiiOrg's python scipt.
+* After that you can run BASH script to send HTML Email with informations about open alerts in LibreNMS.
+* For HTML Email I am using little bit edited [Free Responsive Simple HTML Email Template] (https://github.com/leemunroe/responsive-html-email-template)
 
-# Manual sending of MAIL
+# Installation of this stack
+
+```
+cd /opt
+git clone https://github.com/jozefrebjak/librenms-mail-report.git
+cd librenms-mail-report
+mkdir api-report && mkdir full-mail
+````
+
+* When you have installed all what is needed you can run Bash script to send Email
 
 ```
 ./send-mail-report.sh
 ```
+
+## Dependencies 
 
 # SSMTP
 
@@ -71,41 +83,13 @@ On Ubuntu prior version if you want to install python2:
 
 Add your API token in the script and change the API URL:
 
-	auth_token = "API_TOKEN"
-	api_url = "https://LIBRENMS_URL/api/v0/"
+```
+auth_token = "API_TOKEN"
+api_url = "https://LIBRENMS_URL/api/v0/"
+```
 
 Run the script:
 
-	python ./open_alerts.py
-
-Text output example:
-
-	Devices Down: (1): 
-	+-----------------------+---------------------+---------------------+-----------------+
-	|        Hostname       |    Notes            |      Down since     |      Location   |
-	+-----------------------+---------------------+---------------------+-----------------+
-	| rtr-4g-01.example.org | 4G Router Groningen | 2018-08-03 14:21:18 |      Groningen  |
-	+-----------------------+---------------------+---------------------+-----------------+
-
-	Critical alerts (3):
-	+-----------------------+-----------------------+----------------------------------------+-----------------------------+
-	|        Hostname       |       Alert rule      |               OS Version               |           Location          |
-	+-----------------------+-----------------------+----------------------------------------+-----------------------------+
-	|  server1.example.org  | State Sensor Critical |      Server 2008 R2 SP1 (NT 6.1)       |        Papendrecht          |
-	|  server2.example.org  | State Sensor Critical | Server 2008 Datacenter R2 SP1 (NT 6.1) |        Benthuizen           |
-	|  server3.example.org  |    Disk used > 95%    |          3.0.76-0.11-default           |        Papendrecht          |
-	+-----------------------+-----------------------+----------------------------------------+-----------------------------+
-
-	Warning alerts (4):
-	+--------------------------+-----------------+-----------------------------+-----------------------------+
-	|         Hostname         |    Alert rule   |          OS Version         |        Location             |
-	+--------------------------+-----------------+-----------------------------+-----------------------------+
-	|    server5.example.org   | Disk used > 85% |   Server 2012 R2 (NT 6.3)   |        Papendrecht          |
-	|    server6.example.org   | Disk used > 85% | Server 2008 R2 SP1 (NT 6.1) |        Papendrecht          |
-	|    server7.example.org   | Disk used > 85% |      4.4.0-121-generic      |        Middenmeer           |
-	|    server8.example.org   | Disk used > 85% |   Server 2012 R2 (NT 6.3)   |        Papendrecht          |
-	+--------------------------+-----------------+-----------------------------+-----------------------------+
-
-HTML Example:
-
-<img src="https://raymii.org/s/inc/img/librenms_api.png" />
+```
+python ./open_alerts.py
+```
